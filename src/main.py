@@ -79,7 +79,7 @@ PAGE_TEMPLATE_TOP = """
 
 PAGES_TEMPLATE_LINK = """
                 <a href="$link$" target="_blank"><div class="box">
-                    <img class="logo" src="images/$uniName$Logo.png">
+                    <img class="logo" src="images/$boxImgName$">
                     <h3>$newsletterName$</h3>
                 </div></a>
 """
@@ -132,7 +132,7 @@ def main():
                         pageContent += PAGES_TEMPLATE_LINK
                         pageContent = pageContent.replace("$newsletterName$", link[0])
                         pageContent = pageContent.replace("$link$", link[1])
-                        pageContent = pageContent.replace("$uniName$", link[2].strip())
+                        pageContent = pageContent.replace("$boxImgName$", link[2].strip())
 
             
             print(f"Filename: {filename}")
