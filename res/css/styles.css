@@ -1,0 +1,55 @@
+* {
+    font-family: "Arial", sans-serif;
+    
+    --font-color: #e7ecef;
+    --dark-font-color: #252525;
+    --title-bg-color: #2980B9;
+    --body-bg-color: #EEEEEE;
+    --box-bg-color: #FFFFFF;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --box-border: 0.1rem solid rgba(0, 0, 0, 0.2);
+
+    --box-height: 180px;
+    --box-min-width: 150px;
+}
+
+/* Reset some default browser styles */
+body, h3 {
+    margin: 0;
+    padding: 0;
+    color: var(--dark-font-color);
+}
+
+body, h1 {
+    color: var(--font-color);
+}
+
+.head {
+    padding: 4% 0;
+    background: var(--title-bg-color);
+}
+
+/* Center the title */
+.title {
+    position: relative; /* Add relative positioning */
+    text-align: center;
+    margin: auto;
+    font-size: 25px;
+}
+
+.container {
+    padding-top: 25px;
+    background: var(--body-bg-color);
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.heading {
+    color: var(--dark-font-color);
+}

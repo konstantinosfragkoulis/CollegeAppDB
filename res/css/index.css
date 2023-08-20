@@ -1,0 +1,65 @@
+/* Create a grid layout for the body */
+main {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute items evenly */
+    gap: 20px; /* Gap between items */
+    padding: 20px 0;
+}
+
+/* Style for each box */
+.box {
+    min-width: 50px;
+    height: var(--box-height);
+
+    flex: 1 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: var(--box-bg-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border: var(--box-border);
+}
+
+.emoji {
+    font-size: 50px;
+}
+
+.logo {
+    display: block;
+    margin: 41.5px auto;
+    width: 58px;
+    height: 58px;
+}
+
+a {
+    min-width: 175px;
+    height: var(--box-height);
+    
+    flex: 1 0 calc(20% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+    .box {
+        flex: 1 1 auto;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .box {
+        flex: 0 0 auto; /* Each box occupies 100% width on small screens */
+    }
+    
+    a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
