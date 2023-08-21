@@ -35,6 +35,7 @@ main {
 .logo {
     display: block;
     margin: auto;
+    margin-top: 10px;
     width: 100px;
     height: 100px;
 }
@@ -46,6 +47,10 @@ a {
     flex: 1 0 calc(20% - 20px);
     margin-left: auto;
     margin-right: auto;
+}
+
+h3 {
+    margin-top: 25px;
 }
 
 /* Media query for responsiveness */
