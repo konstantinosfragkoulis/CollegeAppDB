@@ -128,8 +128,6 @@ def main():
 
                         if pageContent == PAGE_TEMPLATE_TOP.strip():
                             pageContent = pageContent.replace("$filename$", filename)
-                            pageContent = pageContent.replace("$name$", convertToName(filename))
-                            pageContent = pageContent.replace("$heading$", heading)
 
                         pageContent += PAGES_TEMPLATE_LINK
                         pageContent = pageContent.replace("$newsletterName$", link[0])
@@ -156,6 +154,7 @@ def main():
             indexContent += tmpVar
 
             pageContent = pageContent.replace("$heading$", heading)
+            pageContent = pageContent.replace("$name$", convertToName(filename))
             
             pageContent += INDEX_TEMPLATE_BOTTOM
 
