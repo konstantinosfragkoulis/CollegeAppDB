@@ -106,6 +106,8 @@ def main():
 
             pageContent = PAGE_TEMPLATE_TOP.strip()
 
+            link = []
+
             with open(filePath, 'r') as myFile:
                 print(f"Opened {filePath}")
                 for line in myFile:
@@ -139,7 +141,8 @@ def main():
             print(f"Emoji: {emoji}")
             print(f"Image Name: {imgname}")
             print(f"Heading: {heading}")
-            print(f"Link: {link}\n")
+            if link != []:
+                print(f"Link: {link}\n")
 
             if emoji != None:
                 tmpVar = INDEX_TEMPLATE_EMOJI
