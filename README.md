@@ -23,6 +23,7 @@ $imgname: <FRONT_PAGE_IMAGE_NAME.EXTENSION>
 ```
 New images must be placed in `res/images`.
 
-### `res`, `res/css`, AND `res/images` MUST BE PRESENT!
+### Generate the new HTML files
+`res`, `res/css`, and `res/images` MUST BE PRESENT!
 
-### Run `python3 src/main.py` from the `CollegeAppDB` directory. DO NOT RUN `main.py` FROM INSIDE THE `src` DIRECTORY!
+Run `python3 src/main.py`
