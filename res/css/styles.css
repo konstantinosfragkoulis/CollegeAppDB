@@ -21,8 +21,6 @@
     user-select: none;           /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
     /* Disable tap highlight */
     -webkit-tap-highlight-color: transparent;
-
-    background: var(--body-bg-color);
 }
 
 /* Reset some default browser styles */
@@ -53,6 +51,13 @@ body, h1 {
     padding-top: 25px;
     background: var(--body-bg-color);
     height: 100vh;
+    /* Make the container as large as it needs to be to fill the whole page */
+    min-height: -webkit-fill-available;
+    /* make this support all browsers */
+    min-height: fill-available;
+    min-height: -moz-fill-available;
+    min-height: -ms-fill-available;
+    min-height: khtml-fill-available;
 }
 
 a {
