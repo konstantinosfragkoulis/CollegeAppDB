@@ -21,6 +21,8 @@
     user-select: none;           /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
     /* Disable tap highlight */
     -webkit-tap-highlight-color: transparent;
+
+    background: var(--body-bg-color);
 }
 
 /* Reset some default browser styles */
