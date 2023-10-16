@@ -40,6 +40,8 @@ main {
     height: 100px;
     /* Resize the image while maintaining the original aspect ratio */
     object-fit: contain;
+    /* Round the corners of the images */
+    border-radius: 15%;
 }
 
 a {
