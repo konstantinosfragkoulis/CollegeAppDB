@@ -84,6 +84,7 @@ PAGES_TEMPLATE_LINK = """
                 </div></a>
 """
 
+
 def convertToName(filename):
     filename = re.sub("([a-z])([A-Z])","\g<1> \g<2>", filename)
     return filename[0].capitalize() + filename[1:]
@@ -94,7 +95,6 @@ def main():
     outputPath = "./res"
 
     inputFiles = os.listdir(inputPath)
-    outputFiles = os.listdir(outputPath)
 
     indexContent = INDEX_TEMPLATE_TOP
 
@@ -105,13 +105,14 @@ def main():
             filename = os.path.splitext(filename)[0]
 
             pageContent = PAGE_TEMPLATE_TOP.strip()
+            pageContent = pageContent.replace("$filename$", filename)
+
 
             link = []
-
             with open(filePath, 'r') as myFile:
                 print(f"Opened {filePath}")
                 for line in myFile:
-                    line = line.replace('\n', '').strip() # Remove newline
+                    line = line.replace('\n', '').strip()
                     if line.startswith("$emoji:"):
                         emoji = line.split(":", 1)[1].strip()
                         if emoji == "-":
@@ -126,21 +127,22 @@ def main():
                         line = line.lstrip("-").strip()
                         link = line.split("@")
 
-                        if pageContent == PAGE_TEMPLATE_TOP.strip():
-                            pageContent = pageContent.replace("$filename$", filename)
+                        for i in range(0, len(link)):
+                            link[i] = link[i].strip()
 
                         pageContent += PAGES_TEMPLATE_LINK
                         pageContent = pageContent.replace("$newsletterName$", link[0])
                         pageContent = pageContent.replace("$link$", link[1])
                         pageContent = pageContent.replace("$boxImgName$", link[2].strip())
+            
+                        if link != []:
+                            print(f"Link: {link}\n")
 
             
             print(f"Filename: {filename}")
             print(f"Emoji: {emoji}")
             print(f"Image Name: {imgname}")
             print(f"Heading: {heading}")
-            if link != []:
-                print(f"Link: {link}\n")
 
             if emoji != None:
                 tmpVar = INDEX_TEMPLATE_EMOJI
@@ -155,22 +157,24 @@ def main():
 
             pageContent = pageContent.replace("$heading$", heading)
             pageContent = pageContent.replace("$name$", convertToName(filename))
-            
+
+
             pageContent += INDEX_TEMPLATE_BOTTOM
 
 
             outputFilePath = os.path.join(outputPath, filename + ".html")
             with open(outputFilePath, 'w') as outputFile:
                 outputFile.write(pageContent)
-                print(f"New Page {convertToName(filename)}")
-                print(f"Written to {filename+'.html'}\n\n")
+            print(f"New Page {convertToName(filename)}\n")
+            print(pageContent)
+            print(f"Written to {filename+'.html'}\n\n")
     
     indexContent += INDEX_TEMPLATE_BOTTOM
     outputFilePath = os.path.join(outputPath, "index.html")
     with open(outputFilePath, 'w') as outputFile:
         outputFile.write(indexContent)
-        print(indexContent)
-        print("Written to index.html")
+    print(indexContent)
+    print("Written to index.html")
 
 
 if __name__ == "__main__":
