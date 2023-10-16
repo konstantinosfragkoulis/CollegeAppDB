@@ -50,14 +50,8 @@ body, h1 {
 .container {
     padding-top: 25px;
     background: var(--body-bg-color);
-    height: 100vh;
-    /* Make the container as large as it needs to be to fill the whole page */
-    min-height: -webkit-fill-available;
-    /* make this support all browsers */
-    min-height: fill-available;
-    min-height: -moz-fill-available;
-    min-height: -ms-fill-available;
-    min-height: khtml-fill-available;
+    /* Make the container fill the entire page, from top to bottom */
+    min-height: 100vh;
 }
 
 a {
