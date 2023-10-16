@@ -13,6 +13,8 @@ The files are made with this template:
 $emoji: <EMOJI>
 $imgname: <FRONT_PAGE_IMAGE_NAME.EXTENSION>
 
+! <META_PAGE_DESCRIPTION>
+
 # <HEADING>
 
 - <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION> @ <IMAGE_DESCRIPTION>
