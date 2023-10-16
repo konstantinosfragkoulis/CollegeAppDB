@@ -86,9 +86,10 @@ PAGES_TEMPLATE_LINK = """
 
 
 def convertToName(filename):
-    filename = re.sub("([a-z])([A-Z])","\g<1> \g<2>", filename)
-    return filename[0].capitalize() + filename[1:]
+    return re.sub("([a-z])([A-Z])","\g<1> \g<2>", filename)[0].capitalize() + filename[1:]
 
+# The above function converts "camelCase" to "Camel Case"
+# Do this in one line
 
 def main():
     inputPath = "./input"
@@ -96,33 +97,47 @@ def main():
 
     inputFiles = os.listdir(inputPath)
 
+    # The way this works is that it opens each .md file and generates the html for it.
+    # At the same time it adds a link to generated page in the index.html
+
+    # Begin with the index.html
     indexContent = INDEX_TEMPLATE_TOP
 
-    for filename in inputFiles: # Open each input file
+    # For each input file
+    for filename in inputFiles:
+        # Check if it is a .md file
         if filename.endswith(".md"):
             filePath = os.path.join(inputPath, filename)
 
             filename = os.path.splitext(filename)[0]
 
-            pageContent = PAGE_TEMPLATE_TOP.strip()
+            # Begin generating the page for the specific .md file
+            pageContent = PAGE_TEMPLATE_TOP
             pageContent = pageContent.replace("$filename$", filename)
 
 
             link = []
+            # Open the file
             with open(filePath, 'r') as myFile:
                 print(f"Opened {filePath}")
+                # For each line
                 for line in myFile:
+                    # Extract info
                     line = line.replace('\n', '').strip()
+                    # Emoji
                     if line.startswith("$emoji:"):
                         emoji = line.split(":", 1)[1].strip()
                         if emoji == "-":
                             emoji = None
+                    # Image
                     elif line.startswith("$imgname:"):
                         imgname = line.split(":", 1)[1].strip()
                         if imgname == "-":
                             imgname = None
+                    # Heading
                     elif line.startswith("#"):
                         heading = line.lstrip("#").strip()
+                    # Link (Text, link, image)
                     elif line.startswith("-"):
                         line = line.lstrip("-").strip()
                         link = line.split("@")
@@ -130,6 +145,8 @@ def main():
                         for i in range(0, len(link)):
                             link[i] = link[i].strip()
 
+                        # If the line in the .md file contains a link
+                        # Add a template of how the link should look in the page and replace placeholders
                         pageContent += PAGES_TEMPLATE_LINK
                         pageContent = pageContent.replace("$newsletterName$", link[0])
                         pageContent = pageContent.replace("$link$", link[1])
@@ -144,6 +161,7 @@ def main():
             print(f"Image Name: {imgname}")
             print(f"Heading: {heading}")
 
+            # Add the emoji OR image to the entry in index.html for the specific .md file
             if emoji != None:
                 tmpVar = INDEX_TEMPLATE_EMOJI
                 tmpVar = tmpVar.replace("$emoji$", emoji)
@@ -151,17 +169,21 @@ def main():
                 tmpVar = INDEX_TEMPLATE_IMAGE
                 tmpVar = tmpVar.replace("$imgname$", imgname)
             
+            # Add the text to the entry in index.html for the specific .md file
             tmpVar = tmpVar.replace("$filename$", filename)
             tmpVar = tmpVar.replace("$name$", convertToName(filename))
             indexContent += tmpVar
 
+            # Add the heading to the page for the specific .md file
             pageContent = pageContent.replace("$heading$", heading)
             pageContent = pageContent.replace("$name$", convertToName(filename))
 
-
+            # We have read the entire .md file
+            # Add the bottom part of the page to the generated html file
             pageContent += INDEX_TEMPLATE_BOTTOM
 
 
+            # Write the generated html file to the output folder
             outputFilePath = os.path.join(outputPath, filename + ".html")
             with open(outputFilePath, 'w') as outputFile:
                 outputFile.write(pageContent)
@@ -169,6 +191,9 @@ def main():
             print(pageContent)
             print(f"Written to {filename+'.html'}\n\n")
     
+    # We have read all the .md files
+    # Add the bottom part of the index.html
+    # Write the generated index.html to the output folder
     indexContent += INDEX_TEMPLATE_BOTTOM
     outputFilePath = os.path.join(outputPath, "index.html")
     with open(outputFilePath, 'w') as outputFile:
