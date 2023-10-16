@@ -1,5 +1,5 @@
 $emoji: -
-$imgname: redditLogo.png
+$imgname: redditLogo.webp
 
 ! A collection of the best reddit communities for college applicants. Connect with other students, ask questions, and get advice.
 
