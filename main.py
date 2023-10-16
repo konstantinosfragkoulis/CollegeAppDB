@@ -1,8 +1,7 @@
 import os
 import re
 
-INDEX_TEMPLATE_TOP = """
-<!DOCTYPE html>
+INDEX_TEMPLATE_TOP = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,8 +32,7 @@ INDEX_TEMPLATE_BOTTOM = """
         
     </div>
 </body>
-</html>
-"""
+</html>"""
 
 INDEX_TEMPLATE_EMOJI = """
                 <a href="$filename$.html"><div class="box">
@@ -50,8 +48,7 @@ INDEX_TEMPLATE_IMAGE = """
                 </div></a>
 """
 
-PAGE_TEMPLATE_TOP = """
-<!DOCTYPE html>
+PAGE_TEMPLATE_TOP = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -86,7 +83,8 @@ PAGES_TEMPLATE_LINK = """
 
 
 def convertToName(filename):
-    return re.sub("([a-z])([A-Z])","\g<1> \g<2>", filename)[0].capitalize() + filename[1:]
+    filename = re.sub("([a-z])([A-Z])","\g<1> \g<2>", filename)
+    return filename[0].capitalize() + filename[1:]
 
 # The above function converts "camelCase" to "Camel Case"
 # Do this in one line
