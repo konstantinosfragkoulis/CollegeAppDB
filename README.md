@@ -15,13 +15,15 @@ $imgname: <FRONT_PAGE_IMAGE_NAME.EXTENSION>
 
 # <HEADING>
 
-- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION>
-- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION>
-- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION>
-- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION>
-- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION>
+- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION> @ <IMAGE_DESCRIPTION>
+- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION> @ <IMAGE_DESCRIPTION>
+- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION> @ <IMAGE_DESCRIPTION>
+- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION> @ <IMAGE_DESCRIPTION>
+- <LINK_TEXT> @ <LINK> @ <IMAGE_NAME.EXTENSION> @ <IMAGE_DESCRIPTION>
 ```
 New images must be placed in `res/images`.
+While you can use any image format, it is recommended to use `.webp` images for the best performance.
+`<IMAGE_DESCRIPTION>` is followed by "Logo". So if `<IMAGE_DESCRIPTION>` is "MIT", the alt text will be "MIT Logo".
 
 ### Generate the new HTML files
 `res`, `res/css`, and `res/images` MUST BE PRESENT!
