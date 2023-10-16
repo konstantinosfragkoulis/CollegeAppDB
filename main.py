@@ -76,7 +76,7 @@ PAGE_TEMPLATE_TOP = """<!DOCTYPE html>
 
 PAGES_TEMPLATE_LINK = """
                 <a href="$link$" target="_blank"><div class="box">
-                    <img class="logo" src="images/$boxImgName$">
+                    <img class="logo" src="images/$boxImgName$" alt="$uniName$ Logo">
                     <h3>$newsletterName$</h3>
                 </div></a>
 """
@@ -146,6 +146,7 @@ def main():
                         pageContent = pageContent.replace("$newsletterName$", link[0])
                         pageContent = pageContent.replace("$link$", link[1])
                         pageContent = pageContent.replace("$boxImgName$", link[2].strip())
+                        pageContent = pageContent.replace("$uniName$", link[3].strip())
             
                         if link != []:
                             print(f"Link: {link}\n")
