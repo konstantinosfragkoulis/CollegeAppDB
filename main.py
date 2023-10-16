@@ -43,7 +43,7 @@ INDEX_TEMPLATE_EMOJI = """
 
 INDEX_TEMPLATE_IMAGE = """
                 <a href="$filename$.html"><div class="box">
-                    <img class="logo" src="images/$imgname$">
+                    <img class="logo" src="images/$imgname$" alt="$imgAlt$ Logo">
                     <h3>$name$</h3>
                 </div></a>
 """
@@ -168,6 +168,7 @@ def main():
             # Add the text to the entry in index.html for the specific .md file
             tmpVar = tmpVar.replace("$filename$", filename)
             tmpVar = tmpVar.replace("$name$", convertToName(filename))
+            tmpVar = tmpVar.replace("$imgAlt$", convertToName(filename).split(" ")[0])
             indexContent += tmpVar
 
             # Add the heading to the page for the specific .md file
