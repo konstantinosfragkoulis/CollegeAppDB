@@ -64,3 +64,10 @@ a {
 .heading {
     color: var(--dark-font-color);
 }
+
+.boxTxt {
+    margin: 0;
+    padding: 0;
+    color: var(--dark-font-color);
+    font-size: 18.72px;
+}

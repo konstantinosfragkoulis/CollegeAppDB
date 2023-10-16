@@ -38,14 +38,14 @@ INDEX_TEMPLATE_BOTTOM = """
 INDEX_TEMPLATE_EMOJI = """
                 <a href="$filename$.html"><div class="box">
                     <h2 class="emoji">$emoji$</h1>
-                    <h3>$name$</h3>
+                    <h2 class="boxTxt">$name$</h2>
                 </div></a>
 """
 
 INDEX_TEMPLATE_IMAGE = """
                 <a href="$filename$.html"><div class="box">
                     <img class="logo" src="images/$imgname$" alt="$imgAlt$ Logo">
-                    <h3>$name$</h3>
+                    <h2 class="boxTxt">$name$</h2>
                 </div></a>
 """
 
@@ -79,7 +79,7 @@ PAGE_TEMPLATE_TOP = """<!DOCTYPE html>
 PAGES_TEMPLATE_LINK = """
                 <a href="$link$" target="_blank"><div class="box">
                     <img class="logo" src="images/$boxImgName$" alt="$uniName$ Logo">
-                    <h3>$newsletterName$</h3>
+                    <h2 class="boxTxt">$newsletterName$</h2>
                 </div></a>
 """
 
