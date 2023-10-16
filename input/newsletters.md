@@ -1,6 +1,8 @@
 $emoji: 📃
 $imgname: -
 
+! A collection of the newsletters from top US colleges. Stay up to date with the latest news and events that you need to know.
+
 # Top College Newsletters
 
 - MIT Daily & Weekly @ https://web.mit.edu/subscribe/ @ mitLogo.webp @ MIT

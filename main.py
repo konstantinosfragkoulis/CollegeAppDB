@@ -6,6 +6,7 @@ INDEX_TEMPLATE_TOP = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="College DB is a database of resources for high school students applying to college.">
     <title>College DB</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
@@ -53,6 +54,7 @@ PAGE_TEMPLATE_TOP = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="$description$">
     <title>$name$</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/pages.css">
@@ -112,6 +114,7 @@ def main():
 
 
             link = []
+            description = ""
             # Open the file
             with open(filePath, 'r') as myFile:
                 print(f"Opened {filePath}")
@@ -129,6 +132,9 @@ def main():
                         imgname = line.split(":", 1)[1].strip()
                         if imgname == "-":
                             imgname = None
+                    # Description
+                    elif line.startswith("!"):
+                        description = line.lstrip("!").strip()
                     # Heading
                     elif line.startswith("#"):
                         heading = line.lstrip("#").strip()
@@ -156,6 +162,7 @@ def main():
             print(f"Emoji: {emoji}")
             print(f"Image Name: {imgname}")
             print(f"Heading: {heading}")
+            print(f"Description: {description}")
 
             # Add the emoji OR image to the entry in index.html for the specific .md file
             if emoji != None:
@@ -174,6 +181,7 @@ def main():
             # Add the heading to the page for the specific .md file
             pageContent = pageContent.replace("$heading$", heading)
             pageContent = pageContent.replace("$name$", convertToName(filename))
+            pageContent = pageContent.replace("$description$", description)
 
             # We have read the entire .md file
             # Add the bottom part of the page to the generated html file
