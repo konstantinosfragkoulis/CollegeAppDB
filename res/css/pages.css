@@ -38,6 +38,8 @@ main {
     margin-top: 10px;
     width: 100px;
     height: 100px;
+    /* Resize the image while maintaining the original aspect ratio */
+    object-fit: contain;
 }
 
 a {
