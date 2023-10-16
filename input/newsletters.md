@@ -9,3 +9,4 @@ $imgname: -
 - Stanford Report @ https://news.stanford.edu/report/subscribe/ @ stanfordLogo.png
 - Stanford School of Engineering Newsletter @ https://engineering.stanford.edu/email-newsletter @ stanfordLogo.png
 - Carnegie Mellon School of Art Newsletter @ https://art.cmu.edu/subscribe/ @ carnegieMellonLogo.png
+- Tufts University @ https://ugrad.admissions.tufts.edu/register/mailing-list @ tuftsLogo.png
