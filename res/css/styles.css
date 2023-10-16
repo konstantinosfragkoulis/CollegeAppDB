@@ -51,7 +51,7 @@ body, h1 {
     padding-top: 25px;
     background: var(--body-bg-color);
     /* Make the container fill the entire page, from top to bottom */
-    min-height: 100vh;
+    min-height: 105vh;
 }
 
 a {
