@@ -86,9 +86,6 @@ def convertToName(filename):
     filename = re.sub("([a-z])([A-Z])","\g<1> \g<2>", filename)
     return filename[0].capitalize() + filename[1:]
 
-# The above function converts "camelCase" to "Camel Case"
-# Do this in one line
-
 def main():
     inputPath = "./input"
     outputPath = "./res"
