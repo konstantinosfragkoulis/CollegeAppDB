@@ -12,3 +12,5 @@ $imgname: -
 - Stanford School of Engineering @ https://engineering.stanford.edu/email-newsletter @ stanfordLogo.webp @ Stanford University
 - Carnegie Mellon School of Art @ https://art.cmu.edu/subscribe/ @ carnegieMellonLogo.webp @ Carnegie Mellon University
 - Tufts University @ https://ugrad.admissions.tufts.edu/register/mailing-list @ tuftsLogo.webp @ Tufts University
+- Caltech Weekly @ https://www.caltech.edu/caltech-weekly @ caltechLogo.webp @ Caltech
+- Caltech Admissions @ https://apply.caltech.edu/register/learnmore @ caltechLogo.webp @ Caltech
