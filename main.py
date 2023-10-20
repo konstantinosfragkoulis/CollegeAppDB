@@ -10,12 +10,13 @@ INDEX_TEMPLATE_TOP = """<!DOCTYPE html>
     <title>College DB</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="canonical" href="https://college.konstantinos.me">
 </head>
 <body>
 
     <header class="head">
         <nav class="title">
-            <a href="index.html"><h1>College DB</h1></a>
+            <a href="/"><h1>College DB</h1></a>
         </nav>
     </header>
     
@@ -63,7 +64,7 @@ PAGE_TEMPLATE_TOP = """<!DOCTYPE html>
     
     <header class="head">
         <nav class="title">
-            <a href="index.html"><h1>College DB</h1></a>
+            <a href="/"><h1>College DB</h1></a>
         </nav>
     </header>
 
