@@ -11,3 +11,4 @@ $imgname: -
 - Caltech @ https://apply.caltech.edu/portal/visit @ caltechLogo.webp @ Caltech
 - NYU Washington Square @ https://connect.nyu.edu/portal/nyuvisit_tours @ nyuLogo.webp @ NYU
 - NYU Tandon @ https://connect.nyu.edu/portal/bk_campus_tour @ nyuLogo.webp @ NYU
+- Stanford @ https://apply.stanford.edu/portal/campus-visit @ stanfordLogo.webp @ Stanford University
