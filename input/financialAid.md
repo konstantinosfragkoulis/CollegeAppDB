@@ -10,3 +10,4 @@ $imgname: -
 - FAFSA Aid Estimator @ https://studentaid.gov/aid-estimator/ @ fafsaLogo.webp @ FAFSA
 - FAFSA Checklist @ https://studentaid.gov/resources/prepare-for-college/checklists @ fafsaLogo.webp @ FAFSA
 - FAFSA Form @ https://studentaid.gov/h/apply-for-aid/fafsa @ fafsaLogo.webp @ FAFSA
+- Princeton Financial Aid Calculator @ https://admission.princeton.edu/cost-aid/financial-aid-estimator @ princetonLogo.webp @ Princeton University
